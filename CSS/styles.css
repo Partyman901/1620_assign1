@@ -117,5 +117,18 @@ textarea {
     padding: 3px;
 }
 
-
+@media screen and (max-width: 800px){
+    .container {
+        height: 100%;
+        display: grid;
+        grid-gap: 5px;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: 100px 100px 1fr 100px;
+        grid-template-areas:
+            "head head head"
+            "side side side"
+            "con con con"
+            "foot foot foot";
+    }
+}
 
