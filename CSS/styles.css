@@ -4,6 +4,7 @@
 71F79F, Medium Spring Green */
 
 html, body {
+    margin: 0px;
     height: 100%;
 }
 
@@ -31,6 +32,7 @@ html, body {
 
 .sidebar {
     grid-area: side;
+    margin-left: 5px;
     height: 85%;
     width: 85%;
 }
@@ -60,13 +62,13 @@ button {
 }
 
 textarea {
-    grid-area: txt;
-    width: 85%;
-    height: 85%;
+    width: calc(85%);
+    height: calc(100vh - gap);
     margin-left: 10px;
     padding: 5px;
     resize: none;
 }
+
 .cancelbtn {
     background: #800E13;
 }
@@ -83,6 +85,7 @@ textarea {
 .themebtn{
     background: #575A5E;
 }
+
 .footer {
     grid-area: foot;
     background: #143109;
