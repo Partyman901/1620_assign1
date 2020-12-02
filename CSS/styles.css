@@ -1,7 +1,8 @@
 /* font-family: 'Roboto', sans-serif; */
 /* 15B097, keppel
 3DD6D0, Medium Turqoise
-71F79F, Medium Spring Green */
+71F79F, Medium Spring Green
+191919, Eerie Black*/
 
 html, body {
     margin: 0px;
@@ -63,7 +64,7 @@ button {
 
 textarea {
     width: calc(85%);
-    height: calc(100vh - gap);
+    height: calc(50%);
     margin-left: 10px;
     padding: 5px;
     resize: none;
@@ -79,10 +80,9 @@ textarea {
 
 .notebtn{
     background: #143109;
-
 }
 
-.themebtn{
+.drkbtn{
     background: #575A5E;
 }
 
@@ -96,6 +96,7 @@ textarea {
         "social social"
         "icon1 icon2";
     grid-gap: 5px;
+    padding-bottom: 10px;
 }
 
 .footer > h3 {
@@ -120,11 +121,38 @@ textarea {
     padding: 3px;
 }
 
+.dark-mode {
+    background-color: #F1E8B8;
+    color: black;
+}
+
+.dark-mode-side {
+    background-color: grey;
+    color: white;
+}
+
+.dark-mode-body {
+    background-color: grey;
+}
+
+.dark-mode-content {
+    background-color: #191919;
+}
+
+.dark-mode-textarea {
+    background-color: grey;
+    color: white;
+}
+
+.dark-mode-buttons {
+    background-color: #39372D;
+}
+
 @media screen and (max-width: 800px){
     .container {
         height: 100%;
         display: grid;
-        grid-gap: 5px;
+        grid-gap: 10px;
         grid-template-columns: repeat(3, 1fr);
         grid-template-rows: 100px 100px 1fr 100px;
         grid-template-areas:
