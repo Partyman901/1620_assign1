@@ -49,7 +49,7 @@ function createNoteArea(){
         const notePart = `
         <textarea placeholder="This is a placeholder"></textarea>
         <div class="settwo">
-            <button class="savebtn">Save</button>
+            <button class="savebtn" onclick="addNote(notesArray)">Save</button>
             <button class="cancelbtn" onclick="hideNoteArea()">Cancel</button>
          </div>
         `
@@ -69,4 +69,27 @@ function hideNoteArea(){
     btnSet.remove()
     cancelBtn.remove()
     saveBtn.remove()
+}
+
+function addNote(array){
+    const newNote = document.querySelector('textarea').value
+    const newNoteArray = newNote.replace(/\n/, '|||').split('|||')
+    array.push({ title: newNoteArray[0], body: newNoteArray[1]})
+    console.log(notesArray)
+    const newListItem = `
+        <li onclick="findNote(this)">${newNoteArray[0]}</li>
+        `
+    noteArea.insertAdjacentHTML('beforeend', newListItem)
+}
+
+function findNote(item){
+    const noteTitle = item.innerHTML
+    console.log(noteTitle)
+    for (item of notesArray) {
+        if (item.title == noteTitle) {
+            const textArea = document.querySelector('textarea')
+            const displayNote = notesArray[item.body]
+            textArea.value = item.body
+        }
+    }
 }
