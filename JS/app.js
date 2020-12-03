@@ -17,13 +17,16 @@ const body = document.querySelector('body')
 
 const content = document.querySelector('.content')
 
-const typingArea = document.querySelector('textarea')
-
-console.log(notesArray)
+console.log(content.childElementCount)
 
 drkModeBtn.addEventListener('click', toggleDrkMode)
 
+noteBtn.addEventListener('click', createNoteArea)
+
 function toggleDrkMode() {
+    const typingArea = document.querySelector('textarea')
+    const cancelBtn = document.querySelector('.cancelbtn')
+    const saveBtn = document.querySelector('.savebtn')
     drkModeBtn.classList.toggle('dark-mode')
     noteArea.classList.toggle('dark-mode-side')
     body.classList.toggle('dark-mode-body')
@@ -37,6 +40,23 @@ function toggleDrkMode() {
         drkModeBtn.innerHTML = 'Light Theme'
     } else {
         drkModeBtn.innerHTML = 'Dark Theme'
+    }
+}
+
+function createNoteArea(){
+    console.log(content.childElementCount)
+    if (content.childElementCount == 1){
+        const notePart = `
+        <textarea placeholder="This is a placeholder"></textarea>
+        <div class="settwo">
+            <button class="savebtn">Save</button>
+            <button class="cancelbtn">Cancel</button>
+         </div>
+        `
+        content.insertAdjacentHTML('beforeend', notePart)
+    } else {
+        let textArea = document.querySelector('textarea')
+        textArea.value = '';
     }
 }
 
