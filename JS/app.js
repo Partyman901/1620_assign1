@@ -50,7 +50,7 @@ function createNoteArea(){
         <textarea placeholder="This is a placeholder"></textarea>
         <div class="settwo">
             <button class="savebtn">Save</button>
-            <button class="cancelbtn">Cancel</button>
+            <button class="cancelbtn" onclick="hideNoteArea()">Cancel</button>
          </div>
         `
         content.insertAdjacentHTML('beforeend', notePart)
@@ -60,3 +60,13 @@ function createNoteArea(){
     }
 }
 
+function hideNoteArea(){
+    const textArea = document.querySelector('textarea')
+    const btnSet = document.querySelector('.settwo')
+    const cancelBtn = document.querySelector('.cancelbtn')
+    const saveBtn = document.querySelector('.savebtn')
+    textArea.remove()
+    btnSet.remove()
+    cancelBtn.remove()
+    saveBtn.remove()
+}
